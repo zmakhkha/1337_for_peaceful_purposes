@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:59:14 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/10 20:07:13 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/13 19:50:18 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ size_t  gt_strlcpy(char * dst, const char * src, size_t len){
     // else if(!ft_strlen(src) || !src)
     //     return(ft_strlen(dst));
     int i;
+
+
+
+    
     int s1, s2;
     s1 = ft_strlen(dst);
     s2 = ft_strlen(src);
