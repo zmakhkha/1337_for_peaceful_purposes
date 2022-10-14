@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 22:04:49 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/14 11:53:07 by zmakhkha         ###   ########.fr       */
+/*   Created: 2022/10/14 12:30:40 by zmakhkha          #+#    #+#             */
+/*   Updated: 2022/10/14 12:40:52 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
-
-size_t
-     ft_strlen(const char *s){
-        size_t i;
-        i = 0;
-        while(s[i] != '\0'){
-            i++;
-        }
-    return (i);
+int ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+    int i =0;
+    while((s1[i] == s2[i]) && ((s1[i] != '\0') || (s2[i] != '\0')))
+        i++;
+    if(s1[i] == s2[i])
+        return (0);
+    else
+        return(1);
 }
-
-int main(){
-    char a[10] = "18547";
-    char *b = NULL;
-    // printf("%lu\n",strlen(b));
-    printf("%lu",ft_strlen(b));
-    
-    return 0;
+int main()
+{
+    // printf("%d\n",strncmp(NULL,"abcdd",5));
+    printf("%d",ft_strncmp(NULL,"abcdd",5));
+    return (0);
 }

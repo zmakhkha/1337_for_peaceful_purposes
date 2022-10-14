@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 22:04:49 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/14 11:53:07 by zmakhkha         ###   ########.fr       */
+/*   Created: 2022/10/14 12:07:14 by zmakhkha          #+#    #+#             */
+/*   Updated: 2022/10/14 12:16:55 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-
-size_t
-     ft_strlen(const char *s){
-        size_t i;
+char *
+     ft_strchr(const char *s, int c)
+     {
+        int i;
         i = 0;
-        while(s[i] != '\0'){
+        c = (char)c;
+        while((s[i] != '\0') && (s[i] != c))
             i++;
-        }
-    return (i);
-}
-
-int main(){
-    char a[10] = "18547";
-    char *b = NULL;
-    // printf("%lu\n",strlen(b));
-    printf("%lu",ft_strlen(b));
-    
-    return 0;
+        return((char*)&s[i]);
+     }
+#include<string.h>
+#include<stdio.h>
+int main()
+{
+    // printf("%s",strchr(NULL,'d'));
+    printf("%s",ft_strchr(NULL,'d'));
 }

@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 22:04:49 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/14 11:53:07 by zmakhkha         ###   ########.fr       */
+/*   Created: 2022/10/14 11:55:47 by zmakhkha          #+#    #+#             */
+/*   Updated: 2022/10/14 12:06:43 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-
-size_t
-     ft_strlen(const char *s){
-        size_t i;
-        i = 0;
-        while(s[i] != '\0'){
-            i++;
+int
+     ft_tolower(int c){
+        c = (unsigned char)c;
+        if(('A' <= c) && (c<= 'Z'))
+        {
+            c =c +('a' - 'A');
         }
-    return (i);
-}
+        return (c);
+     }
 
-int main(){
-    char a[10] = "18547";
-    char *b = NULL;
-    // printf("%lu\n",strlen(b));
-    printf("%lu",ft_strlen(b));
+#include <stdio.h>
+#include <ctype.h>
+int main()
+{
+    char a = 'j';
+    printf("%c\n",tolower(a));
+    printf("%c",ft_tolower(a));
     
-    return 0;
 }
