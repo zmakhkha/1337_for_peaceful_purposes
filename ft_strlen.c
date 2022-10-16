@@ -6,20 +6,18 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 22:04:49 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/14 11:53:07 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/16 14:31:38 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-size_t
-     ft_strlen(const char *s){
-        size_t i;
-        i = 0;
-        while(s[i] != '\0'){
-            i++;
-        }
+size_t  ft_strlen(const char *s){
+    size_t i;
+    i = 0;
+    while(s[i] != '\0')
+        i++;
     return (i);
 }
 
