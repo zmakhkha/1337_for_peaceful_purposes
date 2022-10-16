@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:30:40 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/14 12:40:52 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/16 13:55:59 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
         i++;
     if(s1[i] == s2[i])
         return (0);
-    else
+    else if (s1[i] > s2[i])
         return(1);
+    else
+        return(-1);
 }
 int main()
 {
     // printf("%d\n",strncmp(NULL,"abcdd",5));
     printf("%d",ft_strncmp(NULL,"abcdd",5));
     return (0);
-}
+} 

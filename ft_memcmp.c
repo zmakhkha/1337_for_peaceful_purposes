@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 13:22:46 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/16 13:49:48 by zmakhkha         ###   ########.fr       */
+/*   Created: 2022/10/16 13:45:17 by zmakhkha          #+#    #+#             */
+/*   Updated: 2022/10/16 13:56:39 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
-#include<stdio.h>
-void *ft_memchr(const void *s, int c, size_t n)
+#include <string.h>
+
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    c = (unsigned char)c;
+    char *s01 = (char*)s1;
+    char *s02 = (char*)s2;
     int i;
     i=0;
-    char *tmp;
-    tmp = (char*)s;
-    while(i++ < n)
-        if(tmp[i] == c)
-            return (tmp+i);
-    return (NULL);
+    while((s01[i] == s02[i]) && ((s01[i] != '\0') || (s02[i] != '\0')))
+        i++;
+    if(s01[i] == s02[i])
+        return (0);
+    else if (s01[i] > s02[i])
+        return(1);
+    else 
+        return(-1);
 }
+#include<stdio.h>
 int main()
 {
-    printf("%s", memchr("abcd", '\200',3));
+    printf("%d",ft_memcmp("zbcdd","hbcd",3));
     return (0);
-}
+} 
