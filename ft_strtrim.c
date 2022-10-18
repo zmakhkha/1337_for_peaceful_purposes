@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:50:34 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/18 19:36:14 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/18 20:59:42 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,12 @@ char *ft_strtrim(char const *s1, char const *set)
     i=0;j=0;
     len1 = ft_strlen(trim);
     len2 = ft_strlen(s);
+
+    i = len2 - len1;
+
+    while ((i < len2) && (trim[i] != '\0') && (s[i] == trim[i]))
+            i++;
+
     while ((i < len2) && (trim[i] != '\0') && (s[i] == trim[i]))
         i++;
     if (trim[i] == '\0')
@@ -51,6 +57,8 @@ char *ft_strtrim(char const *s1, char const *set)
             int l1 = ft_strlen(s+i);
             // printf("hadi l1: %d", l1);
             char *k = (char*)malloc(l1+1);
+            if (!k)
+                return (NULL);
             j =0;
             while (j <l1)
                 {
