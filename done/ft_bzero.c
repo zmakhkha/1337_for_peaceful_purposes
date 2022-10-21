@@ -14,16 +14,17 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int		i;
-	char	*s1;
+	size_t		i;
+	char		*s1;
 
 	if (n > 0)
 	{
 		i = 0;
 		s1 = (char *)s;
-		while (i++ < n)
+		while (i < n)
 		{
 			s1[i] = '\0';
+			i++;
 		}
 	}
 }

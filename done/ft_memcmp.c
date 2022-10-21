@@ -14,14 +14,15 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*s01;
-	char	*s02;
-	int		i;
+	char		*s01;
+	char		*s02;
+	size_t		i;
 
-	*s01 = (char *)s1;
-	*s02 = (char *)s2;
+	s01 = (char *)s1;
+	s02 = (char *)s2;
 	i = 0;
-	while ((s01[i] == s02[i]) && ((s01[i] != '\0') || (s02[i] != '\0')))
+	while ((s01[i] == s02[i]) && ((s01[i] != '\0') \
+								|| (s02[i] != '\0') || (i < n)))
 		i++;
 	if (s01[i] == s02[i])
 		return (0);
