@@ -10,19 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int
-     ft_isascii(int c){
-        c = (unsigned char) c;
-        if((00 <= c) && (c <= 127)) 
-            return (1);
-        else
-            return (0);
-     }
-
-#include <libc.h>
-#include <ctype.h>
-
-int main(){
-    printf("%d",isascii(128));
-    printf("%d",ft_isascii(128));
+int	ft_isascii(int c)
+{
+	c = (unsigned char) c;
+	if ((00 <= c) && (c <= 127))
+		return (1);
+	else
+		return (0);
 }

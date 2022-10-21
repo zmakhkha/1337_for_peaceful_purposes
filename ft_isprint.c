@@ -10,18 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libc.h>
-#include <ctype.h>
-int
-     ft_isprint(int c){
-        c = (unsigned char) c;
-        if((32 <= c) && (c <= 126)) 
-            return (1);
-        else
-            return (0);
-     }
-
-int main(){
-    printf("%d",isprint(126));
-    printf("%d",ft_isprint(126));
+int	ft_isprint(int c)
+{
+	c = (unsigned char) c;
+	if ((32 <= c) && (c <= 126))
+		return (1);
+	else
+		return (0);
 }

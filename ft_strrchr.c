@@ -11,29 +11,23 @@
 /* ************************************************************************** */
 
 #include <string.h>
-char *ft_strrchr(const char *s, int c)
+
+char	*ft_strrchr(const char *s, int c)
 {
-        int i;
-        int ind;
-        ind = 0;
-        i = 0;
-        c = (char)c;
-        while(s[i] != '\0')
-            {
-                if((s[i] == c))
-                    ind = i;
-                i++;
-            }
-        if(s[i] == c)
-            return((char*)&s[i]); 
-        else
-            return (NULL);
-}
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-    printf("%s\n",strrchr("abcdcd",'e'));
-    printf("%s",ft_strrchr("abcdcd",'e'));
-    return (0);
+	int	i;
+	int	ind;
+
+	ind = 0;
+	i = 0;
+	c = (char)c;
+	while (s[i] != '\0')
+	{
+		if ((s[i] == c))
+			ind = i;
+		i++;
+	}
+	if (s[i] == c)
+		return ((char *)&s[i]);
+	else
+		return (NULL);
 }

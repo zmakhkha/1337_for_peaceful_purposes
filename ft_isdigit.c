@@ -10,16 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libc.h>
-#include <ctype.h>
-int ft_isdigit(int c){
-        c = (unsigned char) c;
-        if((48 <= c) && (c <= 57)) 
-            return (1);
-        else
-            return (0);
-    }
-
-int main(){
-    printf("%d",ft_isdigit(48));
+int	ft_isdigit(int c)
+{
+	c = (unsigned char) c;
+	if ((48 <= c) && (c <= 57))
+		return (1);
+	else
+		return (0);
 }

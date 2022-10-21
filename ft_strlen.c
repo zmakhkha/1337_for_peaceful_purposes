@@ -11,21 +11,13 @@
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdio.h>
 
-size_t  ft_strlen(const char *s){
-    size_t i;
-    i = 0;
-    while(s[i] != '\0')
-        i++;
-    return (i);
-}
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
 
-int main(){
-    char a[10] = "18547";
-    char *b = NULL;
-    // printf("%lu\n",strlen(b));
-    printf("%lu",ft_strlen(b));
-    
-    return 0;
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }

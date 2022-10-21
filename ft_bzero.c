@@ -11,19 +11,19 @@
 /* ************************************************************************** */
 
 #include <strings.h>
-#include <stdio.h>
 
-     void
-     ft_bzero(void *s, size_t n)
-     {
-        if(n>0)
-        {
-            int i;
-            i =0;
-            char *s1 = (char*)s;
-            while(i++ < n)
-            {
-                s1[i] ='\0';
-            }
-        }
-     }
+void	ft_bzero(void *s, size_t n)
+{
+	int		i;
+	char	*s1;
+
+	if (n > 0)
+	{
+		i = 0;
+		s1 = (char *)s;
+		while (i++ < n)
+		{
+			s1[i] = '\0';
+		}
+	}
+}

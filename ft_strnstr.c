@@ -13,41 +13,34 @@
 #include <string.h>
 #include <stdio.h>
 
-static size_t ft_strlen(const char *s){
-        size_t i;
-        i = 0;
-        while(s[i] != '\0'){
-            i++;
-        }
-    return (i);
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
 
-char *
-     ft_strnstr(const char *haystack, const char *needle, size_t len)
-     {
-     int i;
-     int j;
-     i = 0;
-     j = 0;
-
-          while((haystack[i++] !='\0') && (i < len))
-          {
-               if (haystack[i] == *needle)
-               {
-               while (haystack[i+j] == needle[j])
-                    {
-                         j++;
-                    } 
-                    if (needle[j] == '\0')
-                         return ((char *)haystack +i);
-                    else
-                         return (NULL);
-               }
-          }
-          return ((char *)haystack);
-     }
-int main()
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-     // printf("%s",strnstr("abckajck\n",NULL, 4));
-     printf("%s",ft_strnstr("abckajck",NULL, 4));
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while ((haystack[i++] != '\0') && (i < len))
+	{
+		if (haystack[i] == *needle)
+		{
+			while (haystack[i + j] == needle[j])
+					j++;
+			if (needle[j] == '\0')
+				return ((char *)haystack + i);
+			else
+				return (NULL);
+		}
+	}
+	return ((char *)haystack);
 }

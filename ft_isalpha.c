@@ -10,18 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libc.h>
-#include <ctype.h>
-int
-     ft_isalpha(int c){
-        c = (unsigned char) c;
-        if(((65 <= c) && (c <= 90)) || ((97 <= c) && (c <= 122)))
-            return (1);
-        else
-            return (0);
-     }
-
-int main(){
-    printf("%d",isalpha('r'));
-    
+int	ft_isalpha(int c)
+{
+	c = (unsigned char)c;
+	if (((65 <= c) && (c <= 90)) || ((97 <= c) && (c <= 122)))
+		return (1);
+	else
+		return (0);
 }
