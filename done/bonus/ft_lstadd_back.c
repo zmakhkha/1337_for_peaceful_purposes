@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 22:26:41 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 22:27:43 by zmakhkha         ###   ########.fr       */
+/*   Created: 2022/10/23 23:09:48 by zmakhkha          #+#    #+#             */
+/*   Updated: 2022/10/23 23:14:56 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	main()
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	printf("%zu", ft_strlen(ft_strdup("zak")));
-	printf("\n%s", ft_strdup("zak"));
-	return (0);
+	t_list	*pos;
+
+	if (lst != NULL && new != NULL)
+	{
+		pos = *lst;
+		while (pos->next != NULL)
+			pos = pos->next;
+		pos->next = new;
+	}
 }

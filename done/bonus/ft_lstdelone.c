@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 22:26:41 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 22:27:43 by zmakhkha         ###   ########.fr       */
+/*   Created: 2022/10/23 23:16:03 by zmakhkha          #+#    #+#             */
+/*   Updated: 2022/10/23 23:28:14 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	main()
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	printf("%zu", ft_strlen(ft_strdup("zak")));
-	printf("\n%s", ft_strdup("zak"));
+		
+	if (lst != NULL)
+	{
+		(*del)(lst->content);
+		free (lst);
+	}
 	return (0);
 }

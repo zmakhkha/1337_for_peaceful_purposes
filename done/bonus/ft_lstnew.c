@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 22:26:41 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 22:27:43 by zmakhkha         ###   ########.fr       */
+/*   Created: 2022/10/23 22:38:12 by zmakhkha          #+#    #+#             */
+/*   Updated: 2022/10/23 22:43:43 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	main()
+t_list	*ft_lstnew(void *content)
 {
-	printf("%zu", ft_strlen(ft_strdup("zak")));
-	printf("\n%s", ft_strdup("zak"));
-	return (0);
+	t_list	*new;
+
+	new = (t_list *) malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

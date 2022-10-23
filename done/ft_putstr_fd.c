@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 22:26:41 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 22:27:43 by zmakhkha         ###   ########.fr       */
+/*   Created: 2022/10/23 21:25:38 by zmakhkha          #+#    #+#             */
+/*   Updated: 2022/10/23 21:48:08 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	main()
+void	ft_putstr_fd(char *s, int fd)
 {
-	printf("%zu", ft_strlen(ft_strdup("zak")));
-	printf("\n%s", ft_strdup("zak"));
-	return (0);
+	int	i;
+	int	n;
+
+	if (s != NULL)
+	{
+		n = ft_strlen(s);
+		i = 0;
+		while (i < n)
+		{
+			ft_putchar_fd(s[i], fd);
+			i++;
+		}
+	}
+}
+
+int main ()
+{
+	ft_putstr_fd("123", 1);
 }

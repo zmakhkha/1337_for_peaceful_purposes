@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 22:26:41 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 22:27:43 by zmakhkha         ###   ########.fr       */
+/*   Created: 2022/10/23 21:53:15 by zmakhkha          #+#    #+#             */
+/*   Updated: 2022/10/23 22:30:06 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include<libft.h>
 
-int	main()
+void	ft_putnbr_fd(int n, int fd)
 {
-	printf("%zu", ft_strlen(ft_strdup("zak")));
-	printf("\n%s", ft_strdup("zak"));
-	return (0);
+	if (ft_isdigit(n))
+	{
+		write(fd, n, 1);
+	}
 }

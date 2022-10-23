@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 10:19:40 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 15:08:24 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/23 23:16:46 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 # include<string.h>
 # include<stdio.h>
 # include<stdlib.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
@@ -40,8 +46,19 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-char 	**ft_split(char const *s, char c);
+char	**ft_split(char const *s, char c);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst)
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstadd_back(t_list **lst, t_list *new)
+t_list	*ft_lstnew(void *content);
+t_list	*ft_lstlast(t_list *lst);
+
 
 #endif
