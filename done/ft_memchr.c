@@ -6,11 +6,11 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 13:22:46 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/16 13:49:48 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:38:12 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
+#include"libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

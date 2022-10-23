@@ -6,9 +6,11 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 21:17:41 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/16 15:17:00 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:38:22 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include"libft.h"
 
 int	ft_isdigit(int c)
 {

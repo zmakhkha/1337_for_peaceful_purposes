@@ -6,21 +6,11 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 19:53:35 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/17 20:20:12 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:39:38 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+#include"libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

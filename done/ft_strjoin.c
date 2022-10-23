@@ -6,22 +6,11 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:11:22 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/18 16:48:27 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:38:53 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
-#include<stdlib.h>
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+#include"libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

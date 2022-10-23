@@ -6,11 +6,11 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:59:14 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/14 11:53:21 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:38:57 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t len)
 {

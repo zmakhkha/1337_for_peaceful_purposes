@@ -6,9 +6,11 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:55:47 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/14 12:06:43 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:39:47 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include"libft.h"
 
 int	ft_tolower(int c)
 {

@@ -6,14 +6,13 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:50:34 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/20 19:23:23 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:39:30 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <string.h>
+#include"libft.h"
 
-int	get_first(char *s, char *set)
+static	int	get_first(char *s, char *set)
 {
 	int	l1;
 	int	l2;
@@ -33,7 +32,7 @@ int	get_first(char *s, char *set)
 		return (0);
 }
 
-int	get_last(char *s, char *set)
+static	int	get_last(char *s, char *set)
 {
 	int	l1;
 	int	l2;
@@ -67,15 +66,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		if (!res)
 			return (NULL);
 		ft_strlcpy(res, s1 + l1, l2 - l1);
-		printf("%d - %d = %d\n", l2, l1, l2 - l1);
 		return (res);
 	}
 	return (NULL);
-}
-
-int main()
-{
-	char *str = "helloabc\n";
-	char *str0 = strdup("abc\n");
-	printf("%s\n", ft_strtrim(str - 1, str0));
 }

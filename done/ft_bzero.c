@@ -6,11 +6,11 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 09:57:52 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/16 10:18:45 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:38:34 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
+#include"libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

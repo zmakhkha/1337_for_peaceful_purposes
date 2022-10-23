@@ -6,11 +6,11 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 22:04:49 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/16 14:31:38 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:39:04 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
 size_t	ft_strlen(const char *s)
 {
