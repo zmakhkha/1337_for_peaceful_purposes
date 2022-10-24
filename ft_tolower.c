@@ -6,26 +6,18 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:55:47 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/14 12:06:43 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:39:47 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int
-     ft_tolower(int c){
-        c = (unsigned char)c;
-        if(('A' <= c) && (c<= 'Z'))
-        {
-            c =c +('a' - 'A');
-        }
-        return (c);
-     }
+#include"libft.h"
 
-#include <stdio.h>
-#include <ctype.h>
-int main()
+int	ft_tolower(int c)
 {
-    char a = 'j';
-    printf("%c\n",tolower(a));
-    printf("%c",ft_tolower(a));
-    
+	c = (unsigned char)c;
+	if (('A' <= c) && (c <= 'Z'))
+	{
+		c = c +('a' - 'A');
+	}
+	return (c);
 }

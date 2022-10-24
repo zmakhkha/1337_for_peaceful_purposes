@@ -6,44 +6,34 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 19:53:35 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/17 20:20:12 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:39:38 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
+#include"libft.h"
 
-size_t  ft_strlen(const char *s){
-    size_t i;
-    i = 0;
-    while(s[i] != '\0')
-        i++;
-    return (i);
-}
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t		i;
+	size_t		j;
+	char		c;
+	char		*a;
+	char		*s1;
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
-{
-    if(!s)
-        return (NULL);
-    char *s1 = (char*)s;
-    if((len == 0) || ft_strlen(s1) == start)
-        return (0);
-    int i;
-    int j;
-    j =0;
-    char c;
-    c = (unsigned char) start;
-    i =0;
-    while(s1[i] != c)
-        i++;
-    char *a = (char*)malloc(len);
-    while((j < len - 1) && s1[j] != '\0')
-        {
-            a[j++] = s1[i++];
-        }
-    return(a);
-}
-#include<stdio.h>
-int main()
-{
-    printf("%s", ft_substr("NULL",3,2));
+	if (!s)
+		return (NULL);
+	s1 = (char *)s;
+	if ((len == 0) || ft_strlen(s1) == start)
+		return (0);
+	j = 0;
+	c = (unsigned char) start;
+	i = 0;
+	while (s1[i] != c)
+		i++;
+	a = (char *)malloc(len);
+	while ((j < len - 1) && s1[j] != '\0')
+	{
+		a[j++] = s1[i++];
+	}
+	return (a);
 }

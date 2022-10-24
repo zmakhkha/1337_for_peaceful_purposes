@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 12:07:14 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 11:38:41 by zmakhkha         ###   ########.fr       */
+/*   Created: 2022/10/23 21:53:15 by zmakhkha          #+#    #+#             */
+/*   Updated: 2022/10/23 22:30:06 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include<libft.h>
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
-
-	i = 0;
-	c = (char)c;
-	while ((s[i] != '\0') && (s[i] != c))
-		i++;
-	if (s[i] == c)
-		return ((char *) &s[i]);
-	if (s[i] == c)
-		return ((char *)&s[i]);
-	if (s[i] == '\0')
-		return (NULL);
-	return (NULL);
+	if (ft_isdigit(n))
+	{
+		write(fd, n, 1);
+	}
 }

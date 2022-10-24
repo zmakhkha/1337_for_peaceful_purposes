@@ -6,26 +6,16 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:55:47 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/14 12:05:05 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:39:52 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int
-     ft_toupper(int c){
-        c = (unsigned char)c;
-        if(('a' <= c) && (c<= 'z'))
-        {
-            c =c -('a' - 'A');
-        }
-        return (c);
-     }
+#include"libft.h"
 
-#include <stdio.h>
-#include <ctype.h>
-int main()
+int	ft_toupper(int c)
 {
-    char a = 'i';
-    printf("%c\n",toupper(a));
-    printf("%c",ft_toupper(a));
-    
+	c = (unsigned char)c;
+	if (('a' <= c) && (c <= 'z'))
+		c = c - ('a' - 'A');
+	return (c);
 }

@@ -6,17 +6,17 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:25:01 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 22:32:41 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/24 15:53:03 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-static	int	c_words(char *s1,  char c)
+static	int	c_words(char *s1, char c)
 {
-	int i;
-	int nbr;
-	
+	int	i;
+	int	nbr;
+
 	i = 0;
 	nbr = 0;
 	while (s1[i] == c)
@@ -25,7 +25,7 @@ static	int	c_words(char *s1,  char c)
 	{
 		while (s1[i] == c)
 			i++;
-		if (s1[i] && s1[i-1] == c && s1[i] != c)
+		if (s1[i] && s1[i - 1] == c && s1[i] != c)
 			nbr++;
 		i++;
 	}
@@ -33,10 +33,11 @@ static	int	c_words(char *s1,  char c)
 		return (nbr);
 	return (nbr + 1);
 }
-static int size_word(char **t, char c)
+
+static	int	size_word(char **t, char c)
 {
-	int		i;
-	
+	int	i;
+
 	i = 1;
 	while (*(*t) == c)
 		(*t)++;
@@ -49,16 +50,15 @@ static int size_word(char **t, char c)
 	return (i);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char	const *s, char c)
 {
 	int		i;
 	int		n;
 	int		nbr;
-	char 	*t;
+	char	*t;
 	char	**res;
 
 	nbr = c_words((char *)s, c);
-	printf("\nnbr:%d",nbr);
 	t = (char *)s;
 	i = 0;
 	res = (char **)malloc((nbr + 1) * sizeof(char *));
@@ -68,8 +68,7 @@ char **ft_split(char const *s, char c)
 	{
 		n = size_word(&t, c);
 		res[i] = (char *)malloc((n + 1) * sizeof(char));
-		strlcpy(res[i],(char *)s, n +1);
-		printf("\n%d:hadi res :%s\n",n,res[i]);
+		strlcpy(res[i], (char *)s, n + 1);
 		i++;
 		s += n;
 	}

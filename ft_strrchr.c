@@ -6,11 +6,11 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:17:54 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/14 12:30:05 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:39:26 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include"libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

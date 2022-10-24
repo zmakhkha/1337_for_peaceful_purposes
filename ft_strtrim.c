@@ -6,86 +6,67 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:50:34 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/20 19:23:23 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:39:30 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
+#include"libft.h"
 
-char *ft_strchr(const char *s, int c)
+static	int	get_first(char *s, char *set)
 {
-    int i;
-    i = 0;
-    c = (char)c;
-    while((s[i] != '\0') && (s[i] != c))
-        i++;
-    return((char*)&s[i]);
+	int	l1;
+	int	l2;
+	int	i;
+
+	i = 0;
+	l1 = ft_strlen(s);
+	l2 = ft_strlen(set);
+	while (s[i] == *set && *set != '\0')
+	{
+		i++;
+		set++;
+	}
+	if (*set == '\0')
+		return (i);
+	else
+		return (0);
 }
 
-size_t  ft_strlen(const char *s){
-    size_t i;
-    i = 0;
-    while(s[i] != '\0')
-        i++;
-    return (i);
-}
-#include<stdlib.h>
-#include<stdio.h>
-char *ft_strtrim(char const *s1, char const *set)
+static	int	get_last(char *s, char *set)
 {
-    int size_s1;
-    int size_trim;
-    char *tmp;
-    tmp = (char*) s1;
-    size_s1 = ft_strlen(s1);
-    size_trim = ft_strlen(set);
-    int size_res;
-    if(size_s1 >= size_trim)
-    {
-        int i;
-        i =0;
-        while(tmp[size_s1-size_trim +i] == set[i])
-            i++;
-        if(set[i] == '\0')
-            {
-                tmp[size_s1-size_trim +i] = '\0';
-                int k = ft_strlen(tmp);
-                size_res = k - size_trim +1;
-            }
-        i =0;
-        while(tmp[i] == set[i])
-            i++;
-        if(set[i] == '\0')
-            {
-                int k = ft_strlen(tmp);
-                size_res = k - size_trim +1;
-                char *res = (char*)malloc(size_res);
-                    return(NULL);
-                int j=0;
-                while (tmp[j] != '\0')
-                {    
-                    res[j] = tmp[size_trim +j];
-                    j++;
-                }
-                res[j] = '\0';
-            }
-        char *res = (char*)malloc(size_res);
-        if(!res)
-            return(NULL);
-        int j=0;
-        while (tmp[j] != '\0')
-        {    
-            res[j] = tmp[size_trim +j];
-            j++;
-        }
-        res[j] = '\0';
-        return(res);
-    }
-    else
-        return(NULL);
+	int	l1;
+	int	l2;
+	int	i;
+
+	i = 0;
+	l1 = ft_strlen(s);
+	l2 = ft_strlen(set);
+	while (s[l1 - l2 + i] == *set && *set != '\0')
+	{
+		i++;
+		set++;
+	}
+	if (*set == '\0')
+		return (l1 - l2);
+	else
+		return (l1);
 }
-int main()
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    // printf("%lu", ft_strlen(ft_strtrim("abchgig", "abc")));
-    printf("%s", ft_strtrim("hchgigab", "ab"));
+	int		l1;
+	int		l2;
+	char	*res;
+
+	if (s1 && set)
+	{
+		l1 = get_first((char *)s1, (char *)set);
+		l2 = get_last((char *)s1, (char *)set);
+		res = (char *) malloc(l2 - l1 +1);
+		if (!res)
+			return (NULL);
+		ft_strlcpy(res, s1 + l1, l2 - l1);
+		return (res);
+	}
+	return (NULL);
 }
