@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:25:01 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/25 19:25:17 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:19:21 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	**ft_split(char	const *s, char c)
 	{
 		n = size_word(&t, c);
 		res[i] = (char *)malloc((n + 1) * sizeof(char));
-		strlcpy(res[i], (char *)s, n + 1);
+		ft_strlcpy(res[i], (char *)s, n + 1);
 		i++;
 		s += n;
 	}

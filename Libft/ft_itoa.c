@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 07:23:04 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/26 06:26:05 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:03:45 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*get_limits(int n)
 		res = ft_strdup("-2147483648");
 	else if (n == 0)
 		res = (ft_strdup("0"));
-	return res;
+	return (res);
 }
 
 char	*ft_itoa(int n)

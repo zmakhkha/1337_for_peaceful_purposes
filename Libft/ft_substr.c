@@ -6,23 +6,23 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 19:53:35 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/26 00:39:31 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:39:00 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-#include<libc.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char		t[len];
+	char	*t;
 
+	t = (char *)malloc((len + 1)*sizeof(char));
+	if(!t)
+		return(NULL);
 	if (start <= ft_strlen(s))
-		strlcpy(t, (char *)s + start, len + 1);
-	return (ft_strdup(t));
+	{
+		ft_memmove(t, s + len, len);
+		t[len] = 0;
+	}
+	return (t);
 }
-
-//int main()
-//{
-//	printf("%s", ft_substr("tripouille", 1, 1));
-//}

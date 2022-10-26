@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 14:21:30 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/26 01:09:22 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:17:03 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,9 @@ int	ft_atoi(const char *str)
 {
 	char	*tmp;
 	int		i;
-	int		res;
 
 	tmp = (char *) str;
 	i = 0;
-	res = 0;
 	while ((tmp[i] <= 32) || tmp[i] == 127)
 		i++;
 	if (ft_isdigit(tmp[i]))

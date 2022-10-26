@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 10:19:40 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/26 01:44:01 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:18:40 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include<string.h>
 # include<stdio.h>
 # include<stdlib.h>
+# include <stdint.h>
 
 typedef struct s_list
 {

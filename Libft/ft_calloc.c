@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 14:53:56 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/25 22:40:33 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:41:23 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*p;
 
 	p = NULL;
-	if (size && count && size < SIZE_MAX && count < SIZE_MAX)
+	if ((size < SIZE_MAX) && (count < SIZE_MAX))
 	{
 		p = (void *)malloc(count * sizeof(size));
 		ft_bzero(p, size);

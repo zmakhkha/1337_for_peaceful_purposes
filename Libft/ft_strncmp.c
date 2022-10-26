@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:30:40 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/25 07:37:34 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:05:42 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*s01;
 	unsigned char	*s02;
 

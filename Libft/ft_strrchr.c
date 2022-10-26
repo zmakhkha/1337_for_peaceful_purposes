@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:17:54 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/24 21:36:03 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:03:10 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 	int	ind;
-	int nbr;
+	int	nbr;
 
 	nbr = ft_strlen((char *)s);
 	ind = 0;
