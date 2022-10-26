@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 21:13:35 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/26 06:47:16 by zmakhkha         ###   ########.fr       */
+/*   Created: 2022/10/16 10:48:50 by zmakhkha          #+#    #+#             */
+/*   Updated: 2022/10/24 20:41:21 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	write(fd, c, 1);
+	unsigned char				*d;
+	unsigned char				*s;
+
+	d = (unsigned char *) dst;
+	s = (unsigned char *) src;
+	
+	if (len != 0)
+	{
+		while (len)
+		{
+			len--;
+			d[len] = s[len];
+		}
+	}
+	return (d);
 }
