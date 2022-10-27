@@ -24,10 +24,10 @@ $(NAME) : $(OBJ) libft.h
 	ar -rc	$(NAME) $(OBJ)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ1)
 
 fclean:
-	rm -f $(OBJ) $(NAME)
+	rm -f $(OBJ) $(OBJ1) $(NAME)
 
 re	: fclean	all
 
