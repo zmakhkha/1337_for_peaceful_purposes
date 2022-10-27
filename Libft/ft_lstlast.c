@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 23:05:21 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/27 08:46:21 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/27 13:17:01 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-
 	if (lst)
 	{
 		if (lst->next == NULL)

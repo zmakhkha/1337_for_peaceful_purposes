@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:23:53 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/27 11:41:18 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/27 13:16:23 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*pos;
+
 	if (lst && f)
 	{
 		pos = lst;

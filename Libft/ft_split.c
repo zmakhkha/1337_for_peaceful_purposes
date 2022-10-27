@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:25:01 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/27 06:17:41 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/27 13:06:34 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,33 +19,30 @@ static	int	c_words(char *tmp, char c)
 
 	i = 0;
 	res = 0;
-	while(tmp[i])
+	while (tmp[i])
 	{
-		if(tmp[i]!= c && (tmp[i + 1] == c || tmp[i + 1] == '\0'))
+		if (tmp[i] != c && (tmp[i + 1] == c || tmp[i + 1] == '\0'))
 			res++;
 		i++;
 	}
 	return (res);
 }
 
-
-static	int lenght(char *tmp,int i, char c)
+static int	lenght(char *tmp, int i, char c)
 {
 	int	res;
 
 	res = 0;
-	//while(tmp[i]== c && (tmp[i] != '\0'))
-	//	i++;
 	if (c_words(tmp, c))
-		while(tmp[i] && tmp[i]!= c)
+	{
+		while (tmp[i] && tmp[i] != c)
 		{
 			i++;
 			res++;
 		}
-		return (res);
+	}
+	return (res);
 }
-
-
 
 char	**ft_split(char	const *s, char c)
 {
@@ -53,39 +50,21 @@ char	**ft_split(char	const *s, char c)
 	char	*tmp;
 	int		i;
 	int		j;
-	int		n_words;
-	int len;
+	int		len;
 
 	j = 0;
 	tmp = (char *)s;
-	n_words = c_words((char *)s, c);
-	res = (char **)malloc((1 + n_words) * sizeof(char *));
+	res = (char **)malloc((1 + c_words((char *)s, c)) * sizeof(char *));
 	i = 0;
-	while(i < n_words)
+	while (i < c_words((char *)s, c))
 	{
-		while(tmp[j] && tmp[j]== c)
+		while (tmp[j] && tmp[j] == c)
 			j++;
 		len = lenght(tmp, j, c);
-		//printf("size -> %d\n", len);
-		//res[i] = (char *)malloc((len + 1) * sizeof (char));
 		res[i] = ft_substr(s, j, len);
 		j += len;
-		//printf ("%d\n", j);
 		i++;
 	}
-	res[n_words] = NULL;
+	res[c_words((char *)s, c)] = NULL;
 	return (res);
 }
-
-//int main()
-//{
-//	int i = 0;
-//	char * * tab = ft_split("tripouille", 0);
-	
-//	while (tab[i])
-//	{
-//		printf("%s\n", tab[i]);
-//		i++;
-//	}
-//	//printf("%d\n", c_words("1-2--3---4----5-----42", '-'));
-//}
