@@ -6,71 +6,86 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:25:01 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/26 15:19:21 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/27 06:17:41 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-static	int	c_words(char *s1, char c)
+static	int	c_words(char *tmp, char c)
 {
 	int	i;
-	int	nbr;
+	int	res;
 
 	i = 0;
-	nbr = 0;
-	while (s1[i] == c)
-		i++;
-	while (s1[i] != '\0')
+	res = 0;
+	while(tmp[i])
 	{
-		while (s1[i] == c)
-			i++;
-		if (s1[i] && s1[i - 1] == c && s1[i] != c)
-			nbr++;
+		if(tmp[i]!= c && (tmp[i + 1] == c || tmp[i + 1] == '\0'))
+			res++;
 		i++;
 	}
-	if (s1[i - 1] == c)
-		return (nbr);
-	return (nbr + 1);
+	return (res);
 }
 
-static	int	size_word(char **t, char c)
+
+static	int lenght(char *tmp,int i, char c)
 {
-	int	i;
+	int	res;
 
-	i = 1;
-	while (*(*t) == c)
-		(*t)++;
-	while (*(*t) && *(*t) != c)
-	{
-		i++;
-		(*t)++;
-	}
-	return (i);
+	res = 0;
+	//while(tmp[i]== c && (tmp[i] != '\0'))
+	//	i++;
+	if (c_words(tmp, c))
+		while(tmp[i] && tmp[i]!= c)
+		{
+			i++;
+			res++;
+		}
+		return (res);
 }
+
+
 
 char	**ft_split(char	const *s, char c)
 {
-	int		i;
-	int		n;
-	int		nbr;
-	char	*t;
 	char	**res;
+	char	*tmp;
+	int		i;
+	int		j;
+	int		n_words;
+	int len;
 
-	nbr = c_words((char *)s, c);
-	t = (char *)s;
+	j = 0;
+	tmp = (char *)s;
+	n_words = c_words((char *)s, c);
+	res = (char **)malloc((1 + n_words) * sizeof(char *));
 	i = 0;
-	res = (char **)malloc((nbr + 1) * sizeof(char *));
-	if (!res)
-		return (NULL);
-	while (i < nbr)
+	while(i < n_words)
 	{
-		n = size_word(&t, c);
-		res[i] = (char *)malloc((n + 1) * sizeof(char));
-		ft_strlcpy(res[i], (char *)s, n + 1);
+		while(tmp[j] && tmp[j]== c)
+			j++;
+		len = lenght(tmp, j, c);
+		//printf("size -> %d\n", len);
+		//res[i] = (char *)malloc((len + 1) * sizeof (char));
+		res[i] = ft_substr(s, j, len);
+		j += len;
+		//printf ("%d\n", j);
 		i++;
-		s += n;
 	}
-	res[i] = NULL;
+	res[n_words] = NULL;
 	return (res);
 }
+
+//int main()
+//{
+//	int i = 0;
+//	char * * tab = ft_split("tripouille", 0);
+	
+//	while (tab[i])
+//	{
+//		printf("%s\n", tab[i]);
+//		i++;
+//	}
+//	//printf("%d\n", c_words("1-2--3---4----5-----42", '-'));
+//}
