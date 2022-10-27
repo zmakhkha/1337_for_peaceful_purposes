@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 23:16:03 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/27 13:15:55 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/27 13:48:51 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (lst && del)
+	if (lst)
 	{
 		(*del)(lst->content);
-		free (lst);
+		free(lst);
 	}
 }

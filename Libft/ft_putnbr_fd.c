@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 21:53:15 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/27 12:55:04 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/27 14:10:06 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('0' + n, fd);
 	}
 }
-int main()
-{
+//int main()
+//{
 	
-}
+//}
