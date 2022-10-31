@@ -6,11 +6,11 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 21:43:06 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/24 15:36:28 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/24 16:06:34 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<libft.h>
+#include"libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

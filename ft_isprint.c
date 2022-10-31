@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 21:48:38 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 11:38:18 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/29 12:15:48 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 int	ft_isprint(int c)
 {
-	c = (unsigned char) c;
-	if ((32 <= c) && (c <= 126))
-		return (1);
-	else
-		return (0);
+	return ((c >= 32) && (c <= 126));
 }

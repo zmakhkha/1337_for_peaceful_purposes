@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:11:22 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 11:38:53 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/29 10:22:51 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	int		ss1;
-	int		ss2;
-	char	*k;
+	size_t		i;
+	char		*k;
 
 	if (!s1 || !s2)
 		return (NULL);
-	ss1 = ft_strlen(s1);
-	ss2 = ft_strlen(s2);
-	k = (char *) malloc(ss1 + ss2 + 1);
+	k = (char *) malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!k)
+		return (NULL);
 	i = 0;
-	while (i < ss1)
+	while (i < ft_strlen(s1))
 	{
 		k[i] = s1[i];
 		i++;
 	}
-	while (i < ss2 + ss1)
+	while (i < ft_strlen(s1) + ft_strlen(s2))
 	{
-		k[i] = s2[i - ss1];
+		k[i] = s2[i - ft_strlen(s1)];
 		i++;
 	}
 	k[i] = '\0';

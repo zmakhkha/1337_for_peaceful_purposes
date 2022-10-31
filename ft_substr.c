@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 19:53:35 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 11:39:38 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/31 22:44:05 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t		i;
-	size_t		j;
-	char		c;
-	char		*a;
-	char		*s1;
+	char	*t;
+	size_t	size;
 
 	if (!s)
 		return (NULL);
-	s1 = (char *)s;
-	if ((len == 0) || ft_strlen(s1) == start)
-		return (0);
-	j = 0;
-	c = (unsigned char) start;
-	i = 0;
-	while (s1[i] != c)
-		i++;
-	a = (char *)malloc(len);
-	while ((j < len - 1) && s1[j] != '\0')
-	{
-		a[j++] = s1[i++];
-	}
-	return (a);
+	size = ft_strlen(s);
+	if (start >= size)
+		return (ft_strdup(""));
+	if (len > size - start)
+		len = size - start;
+	t = (char *)malloc(sizeof(char) * len + 1);
+	if (!t)
+		return (NULL);
+	if (start < ft_strlen(s) && s[start])
+		ft_strlcpy(t, s + start, len + 1);
+	else
+		*t = 0;
+	return (t);
 }
+//int main ()
+//{
+//	printf("%s",substr("", 1, 1));
+//}

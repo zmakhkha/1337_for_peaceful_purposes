@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 08:21:20 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 11:39:08 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/28 21:07:15 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	len = ft_strlen(tmp);
 	res = (char *)malloc((len + 1) * sizeof (char));
+	if (!res)
+		return (NULL);
 	while (tmp[i])
 	{
 		res[i] = (*f)(i, tmp[i]);

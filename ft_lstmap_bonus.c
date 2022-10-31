@@ -1,24 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 14:53:56 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/29 14:46:36 by zmakhkha         ###   ########.fr       */
+/*   Created: 2022/10/27 12:00:03 by zmakhkha          #+#    #+#             */
+/*   Updated: 2022/10/29 17:53:23 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	void	*p;
+	t_list	*new;
+	t_list	*pos;
+	t_list	*tmp;
 
-	p = (void *)malloc(count * size);
-	if (!p)
+	if (!lst)
 		return (NULL);
-	ft_bzero(p, size * count);
-	return (p);
+	new = NULL;
+	if (lst && f)
+	{
+		pos = lst;
+		while (pos)
+		{
+			tmp = ft_lstnew(f(pos->content));
+			if (!tmp)
+			{
+				ft_lstdelone(tmp, del);
+				return (NULL);
+			}
+			ft_lstadd_back(&new, tmp);
+			pos = pos->next;
+		}
+	}
+	return (new);
 }

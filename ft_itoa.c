@@ -6,46 +6,67 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 07:23:04 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/21 08:12:49 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/29 17:46:02 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
-#include<stdio.h>
-#include<stdlib.h>
-char *ft_itoa(int n)
+#include"libft.h"
+
+static	int	get_size(int n)
 {
-    int tmp_n;
-    tmp_n =n;
-    int i;
-    int j;
-    i =0;
-    j =0;
-    while(tmp_n % 10 != 0)
-        {
-            tmp_n /= 10;
-            i++;
-        }
-    if(n < 0)
-        i++;
-    char *res = (char*)malloc((i +1)*sizeof(char));
-    j =i-1;
-    tmp_n = n;
-    if(n < 0)
-        {
-            res[0] = '-';
-            tmp_n = n * -1;
-        }
-    while(tmp_n % 10 != 0)
-        {
-            res[j] =   '0' +(unsigned int)tmp_n % 10;
-            printf("%d", tmp_n % 10);
-            tmp_n /= 10;
-            j--;
-        }
-    return (res);
+	int	i;
+
+	i = 0;
+	if (n < 0)
+		i++;
+	n *= -1;
+	while (n != 0)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
 }
-int main()
+
+char	*get_limits(int n)
 {
-    printf("\n%s\n", ft_itoa(12345452124.15));
+	char	*res;
+
+	res = NULL;
+	if (n == 2147483647)
+		res = ft_strdup("2147483647");
+	else if (n == -2147483648)
+		res = ft_strdup("-2147483648");
+	else if (n == 0)
+		res = (ft_strdup("0"));
+	return (res);
+}
+
+char	*ft_itoa(int n)
+{
+	int		i;
+	int		j;
+	char	*res;
+
+	res = get_limits(n);
+	if (res == NULL)
+	{
+		i = get_size(n);
+		res = (char *)malloc((i + 1) * sizeof(char));
+		if (!res)
+			return (NULL);
+		j = i - 1;
+		if (n < 0)
+		{
+			res[0] = '-';
+			n = n * -1;
+		}
+		while (n > 0)
+		{
+			res[j--] = '0' + (int)n % 10;
+			n /= 10;
+		}
+		res[i] = 0;
+	}
+	return (res);
 }

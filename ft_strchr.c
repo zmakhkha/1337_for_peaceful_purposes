@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:07:14 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 11:38:41 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/24 21:27:34 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ char	*ft_strchr(const char *s, int c)
 		i++;
 	if (s[i] == c)
 		return ((char *) &s[i]);
-	if (s[i] == c)
-		return ((char *)&s[i]);
 	if (s[i] == '\0')
 		return (NULL);
 	return (NULL);

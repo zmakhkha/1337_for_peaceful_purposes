@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 21:17:41 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 11:38:22 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/29 12:47:39 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	ft_isdigit(int c)
 {
-	c = (unsigned char) c;
 	if ((48 <= c) && (c <= 57))
 		return (1);
 	else

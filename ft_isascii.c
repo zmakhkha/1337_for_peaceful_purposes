@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 21:43:47 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 11:38:25 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/29 12:47:03 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	ft_isascii(int c)
 {
-	c = (unsigned char) c;
 	if ((00 <= c) && (c <= 127))
 		return (1);
 	else

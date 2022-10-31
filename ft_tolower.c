@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:55:47 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 11:39:47 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/29 12:38:22 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	c = (unsigned char)c;
-	if (('A' <= c) && (c <= 'Z'))
-	{
-		c = c +('a' - 'A');
-	}
+	if ('A' <= c && c <= 'Z')
+		c = c + 32;
 	return (c);
 }

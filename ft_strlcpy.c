@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 22:33:38 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 11:39:01 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:09:23 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,16 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t len)
 	char		*s;
 
 	s = (char *)src;
-	i = 0;
-	while (i < len)
+	if (len != 0)
 	{
-		dst[i] = s[i];
-		i++;
+		i = 0;
+		len --;
+		while (src[i] && i < len)
+		{
+			dst[i] = s[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	dst[i] = '\0';
-	return (ft_strlen(dst));
+	return (ft_strlen(s));
 }

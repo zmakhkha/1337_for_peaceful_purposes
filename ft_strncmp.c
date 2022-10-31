@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:30:40 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 11:39:17 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/29 10:23:50 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,19 @@
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
+	char	*s01;
+	char	*s02;
 
-	i = 0;
-	while ((s1[i] == s2[i]) && ((s1[i] != '\0') \
-		&& (s2[i] != '\0')) && (i < n))
-		i++;
-	if (s1[i] == s2[i])
-		return (0);
-	else if (s1[i] > s2[i])
-		return (1);
-	else
-		return (-1);
+	s01 = (char *)s1;
+	s02 = (char *)s2;
+	if (n)
+	{
+		i = 0;
+		while ((s01[i] == s02[i]) && (i < n) && s1[i] && s2[i])
+			i++;
+		if (i == n)
+			return (s01[i - 1] - s02[i - 1]);
+		return ((unsigned char)s01[i] - (unsigned char)s02[i]);
+	}
+	return (0);
 }

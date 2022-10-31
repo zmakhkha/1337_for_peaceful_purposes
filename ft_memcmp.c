@@ -6,28 +6,28 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 13:45:17 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 11:38:10 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/31 19:44:40 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char		*s01;
-	char		*s02;
-	size_t		i;
+	unsigned char	*s01;
+	unsigned char	*s02;
+	size_t			i;
 
-	s01 = (char *)s1;
-	s02 = (char *)s2;
-	i = 0;
-	while ((s01[i] == s02[i]) && ((s01[i] != '\0') \
-								|| (s02[i] != '\0') || (i < n)))
-		i++;
-	if (s01[i] == s02[i])
+	if (s1 == s2)
 		return (0);
-	else if (s01[i] > s02[i])
-		return (1);
-	else
-		return (-1);
+	s01 = (unsigned char *)s1;
+	s02 = (unsigned char *)s2;
+	i = 0;
+	if (n == 0)
+		return (0);
+	while ((i < n) && (s01[i] == s02[i]))
+		i++;
+	if (i == n)
+		return (s01[i - 1] - s02[i - 1]);
+	return (s01[i] - s02[i]);
 }

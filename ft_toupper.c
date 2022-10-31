@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:55:47 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 11:39:52 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/10/29 12:38:31 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	c = (unsigned char)c;
-	if (('a' <= c) && (c <= 'z'))
-		c = c - ('a' - 'A');
+	if ('a' <= c && c <= 'z')
+		c = c - 32;
 	return (c);
 }
