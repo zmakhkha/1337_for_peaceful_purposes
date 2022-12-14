@@ -6,16 +6,13 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 10:19:40 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/31 19:29:58 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/11/04 10:54:16 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include<string.h>
-# include<stdio.h>
-# include<stdlib.h>
-# include <stdint.h>
+# include <stdlib.h>
 
 typedef struct s_list
 {

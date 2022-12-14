@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:25:01 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/31 22:49:23 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/11/04 10:51:31 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,54 +43,46 @@ static int	lenght(char *tmp, int i, char c)
 	}
 	return (res);
 }
-static void	free_byte(char ***a, int i)
+
+static	char	**free_byte(char **a)
 {
-	while(i)
+	int	i;
+
+	i = 0;
+	while (a[i])
+	{
 		free(a[i]);
-	free (a);	
+		i++;
+	}
+	free (a);
+	return (NULL);
 }
 
 char	**ft_split(char	const *s, char c)
 {
 	char	**res;
-	char	*tmp;
 	int		i;
 	int		j;
 	int		len;
 
 	j = 0;
-	tmp = (char *)s;
+	if (!s)
+		return (NULL);
 	res = (char **)malloc((1 + c_words((char *)s, c)) * sizeof(char *));
 	if (!res)
 		return (NULL);
 	i = 0;
 	while (i < c_words((char *)s, c))
 	{
-		while (tmp[j] && tmp[j] == c)
+		while (s[j] && s[j] == c)
 			j++;
-		len = lenght(tmp, j, c);
+		len = lenght((char *)s, j, c);
 		res[i] = ft_substr(s, j, len);
 		if (!res[i])
-		{
-			free_byte(&res, i);
-			return (NULL);
-		}
+			return (free_byte(res));
 		j += len;
 		i++;
 	}
 	res[c_words((char *)s, c)] = NULL;
 	return (res);
 }
-
-//int main()
-//{
-//	char **tab = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
-//	int i = -1;
-
-//	while (tab[++i])
-//		printf("%s\n", tab[i]);
-		
-//	printf("%s\n", tab[i]);
-//	system("leaks a.out");
-//	//while(1){};
-//}

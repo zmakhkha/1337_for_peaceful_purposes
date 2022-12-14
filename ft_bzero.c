@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 09:57:52 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/23 11:38:34 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/11/02 11:21:42 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,6 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t		i;
-	char		*s1;
-
-	if (n > 0)
-	{
-		i = 0;
-		s1 = (char *)s;
-		while (i < n)
-		{
-			s1[i] = '\0';
-			i++;
-		}
-	}
+	if (n != 0)
+		ft_memset(s, 0, n);
 }

@@ -12,16 +12,17 @@ OBJ = $(SRC:.c=.o)
 
 OBJ1 = $(BNS:.c=.o)
 
+CC = cc
+
+CFLAGS = -Wextra -Wall -Werror
+
 all: $(NAME) 
 
-$(OBJ) : $(SRC) libft.h
-	cc -c -Wall -Wextra -Werror  $(SRC)
-
-$(OBJ1) : $(BNS) libft.h
-	cc -c -Wall -Wextra -Werror  $(BNS)
-
-$(NAME) : $(OBJ) libft.h
+$(NAME) : $(OBJ)
 	ar -rc	$(NAME) $(OBJ)
+
+%.o : %.c libft.h 
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ) $(OBJ1)
@@ -31,5 +32,7 @@ fclean:
 
 re	: fclean	all
 
-bonus:	$(OBJ) $(OBJ1) libft.h
+bonus:	$(OBJ) $(OBJ1)
 	ar -rc	$(NAME) $(OBJ) $(OBJ1)
+
+.PHONY: clean fclean all re

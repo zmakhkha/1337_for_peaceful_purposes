@@ -6,7 +6,7 @@
 /*   By: zmakhkha <zmakhkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 19:53:35 by zmakhkha          #+#    #+#             */
-/*   Updated: 2022/10/31 22:44:05 by zmakhkha         ###   ########.fr       */
+/*   Updated: 2022/11/02 14:50:41 by zmakhkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		*t = 0;
 	return (t);
 }
-//int main ()
-//{
-//	printf("%s",substr("", 1, 1));
-//}
