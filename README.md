@@ -65,6 +65,6 @@
       <p>In order to implement the two following functions, you will use malloc():<p>
       • calloc<br>
       • strdup<br>
-<h2>Part 2 - Additional functions<h2>
+<h2>Part 2 - Additional functions</h2>
 <p>In this second part, you must develop a set of functions that are either not in the libc,
 or that are part of it but in a different form.<p>
